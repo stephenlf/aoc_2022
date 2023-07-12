@@ -130,6 +130,40 @@ mod filesystem {
             .map(|f| f.borrow().size.unwrap())
             .sum()
         }
+
+        fn best_fit_of_children(&self, parent: &Rc<RefCell<Folder>>, missing_space: u32, mut best_fit: u32) -> u32 {
+            
+            for child in &parent.borrow().child_folders {
+                
+                let mut size = 0;
+                if child.borrow().child_folders.len() == 0 {
+                    size = child.borrow().size.expect("Unexpectedly found a size == None value")
+                } else {
+                    size = self.best_fit_of_children(&child, missing_space, best_fit)
+                }
+                if size > missing_space && size < best_fit {
+                    println!("Found a better fit: {} < {}", size, best_fit);
+                    best_fit = size.clone();
+                } 
+                let parent_size = parent.borrow().size.unwrap();
+                if parent_size > missing_space && parent_size < best_fit {
+                    println!("Found a better fit: {} < {}", parent_size, best_fit);
+                    best_fit = parent_size.clone();
+                } 
+
+            }
+            best_fit
+        }
+
+        pub fn calc_delete(&mut self) -> u32 {
+            let total_space: u32 = 70000000;
+            let required_space: u32 = 30000000;
+            let used_space: u32 = self.root.borrow().size.unwrap();
+            let available_space: u32 = total_space - used_space;
+            let missing_space: u32 = required_space - available_space;
+            self.pwd = Rc::clone(&self.root);
+            self.best_fit_of_children(&self.root, missing_space, used_space)
+        }
     }
 
     pub enum CdToken<T> {
@@ -534,6 +568,7 @@ fn main() {
 
     fs.update_sizes();
     println!("{}",fs.small_folder_sizes());
+    println!("{}",fs.calc_delete());
 }
 
 #[cfg(test)]
