@@ -1,3 +1,7 @@
+/// Key topics covered:
+/// * Modules https://doc.rust-lang.org/rust-by-example/mod/split.html
+/// * Push and pop
+
 use std::{path::PathBuf};
 
 mod _day_5;

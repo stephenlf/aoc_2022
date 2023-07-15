@@ -1,5 +1,8 @@
 #![allow(unused)]
 
+/// Key topics covered:
+/// * Bool algebra syntax
+
 use std::{fs::File, path::PathBuf};
 use std::io::{BufRead, BufReader, Lines};
 

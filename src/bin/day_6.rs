@@ -1,5 +1,9 @@
 #[allow(unused)]
 
+/// Key topics covered:
+/// * Sliding windows with iter.window()
+/// - Early returns
+
 use std::fs;
 use std::path::PathBuf;
 

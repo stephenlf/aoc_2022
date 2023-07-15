@@ -31,7 +31,7 @@ impl Port {
 
         let mut temp_docks: HashMap<usize, u32> = HashMap::new();        // {character_index, dock_number}
         
-        for (i, c) in temp_ports.last().unwrap().chars().enumerate() {
+        for (i, c) in temp_ports.last().unwrap().chars().enumerate() {  // Replace .chars().enumers with .char_indices
             if c.is_digit(10) {
                 temp_docks.insert(i, c.to_digit(10).unwrap());
             }

@@ -1,3 +1,9 @@
+/// Key topics covered:
+/// * Parsing token variants to enums
+/// * Match blocks
+/// - Setup methods in test blocks
+/// * Character iterators
+
 use std::fs;
 use std::io::{BufRead,BufReader};
 

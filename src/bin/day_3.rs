@@ -1,4 +1,9 @@
 #![allow(non_snake_case, dead_code, unused)]
+/// Key topics covered:
+/// * Hashset and intersection 
+/// - Alphabetical priority from char ASCII code
+/// - iter.next() 
+
 
 use std::collections::HashSet;
 use std::collections::hash_set::Intersection;

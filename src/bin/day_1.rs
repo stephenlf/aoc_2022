@@ -1,4 +1,9 @@
-use std::ops::Index;
+/// Key topics covered:
+/// * Structs, methods, derived traits
+/// * io with the BufReader
+/// * Test cases
+/// * String.parse::<T>()
+
 use std::{fs, io};
 use std::io::BufRead;
 
@@ -28,7 +33,9 @@ fn parse_input(file: fs::File) -> Vec<Elf> {
     let line_reader = io::BufReader::new(file).lines().into_iter()  ;
 
     // Read each line 
+    // !! BETTER: for Ok(line) in line_reader...
     for line in line_reader {
+        
         let line = line.unwrap();
         if line == String::from('\n') || line.is_empty() {
             expedition.push(Elf::new());

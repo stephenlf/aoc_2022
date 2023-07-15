@@ -1,3 +1,9 @@
+/// Key topics covered:
+/// * The borrow checker
+/// * Rc, RefCell, the Rc<RefCell<...>> pattern
+/// * Rc::clone(..), RefCell.borrow() vs .borrow_mut() cmpr to & and &mut
+/// - impl Display for T...
+
 /*
 /   1. Model our filesystem with nested structs
         DONE
@@ -216,10 +222,6 @@ mod filesystem {
                     size: None,
                 }
             ))
-        }
-
-        fn add_parent_folder(&mut self, parent: &Rc<RefCell<Folder>>) {
-            self.parent_folder = Some(Rc::clone(parent));
         }
 
         fn add_child_folder(&mut self, child: &Rc<RefCell<Folder>>) {
