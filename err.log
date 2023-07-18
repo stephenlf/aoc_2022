@@ -1,0 +1,144 @@
+warning: unused manifest key: bin.0.version
+warning: unused manifest key: bin.1.version
+warning: unused import: `Tree`
+ --> src\day_8_algorithms\single.rs:1:29
+  |
+1 | use super::forest::{Forest, Tree};
+  |                             ^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `Tree`
+ --> src\day_8_algorithms\threaded.rs:1:29
+  |
+1 | use super::forest::{Forest, Tree};
+  |                             ^^^^
+
+warning: value assigned to `max_height` is never read
+ --> src\day_8_algorithms\single.rs:6:13
+  |
+6 |     let mut max_height: i32 = -1;
+  |             ^^^^^^^^^^
+  |
+  = help: maybe it is overwritten before being read?
+  = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `forest`
+   --> src\day_8_algorithms\threaded.rs:135:26
+    |
+135 | pub fn calc_desirability(forest: &Forest) {
+    |                          ^^^^^^ help: if this is intentional, prefix it with an underscore: `_forest`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: associated function `with_capactiy` is never used
+ --> src\day_8_algorithms\threaded.rs:9:8
+  |
+8 | impl VisibilityBitMap {
+  | --------------------- associated function in this implementation
+9 |     fn with_capactiy(rows: usize) -> Self {
+  |        ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `advent_of_code` (lib) generated 5 warnings (run `cargo fix --lib -p advent_of_code` to apply 3 suggestions)
+warning: unused variable: `i`
+  --> src\bin\day_5.rs:24:10
+   |
+24 |     for (i, mut dock) in port.docks.into_iter().enumerate() {
+   |          ^ help: if this is intentional, prefix it with an underscore: `_i`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `i`
+  --> src\bin\day_5.rs:42:10
+   |
+42 |     for (i, mut dock) in port.docks.into_iter().enumerate() {
+   |          ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: `advent_of_code` (bin "day_5") generated 2 warnings (run `cargo fix --bin "day_5"` to apply 2 suggestions)
+warning: value assigned to `size` is never read
+   --> src\bin\day_7.rs:144:25
+    |
+144 |                 let mut size = 0;
+    |                         ^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `s`
+   --> src\bin\day_7.rs:553:21
+    |
+553 |                     s => fs.cd(CdToken::Child(d)),
+    |                     ^ help: if this is intentional, prefix it with an underscore: `_s`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: associated items `new` and `get_size` are never used
+   --> src\bin\day_7.rs:327:12
+    |
+326 |     impl File {
+    |     --------- associated items in this implementation
+327 |         fn new(name: String, size: u32) -> Self {
+    |            ^^^
+...
+331 |         fn get_size(&self) -> u32 {
+    |            ^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: value assigned to `max_height` is never read
+  --> src\bin\day_8.rs:22:17
+   |
+22 |         let mut max_height: i32 = -1;
+   |                 ^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` on by default
+
+warning: `advent_of_code` (bin "day_7") generated 3 warnings (run `cargo fix --bin "day_7"` to apply 1 suggestion)
+warning: `advent_of_code` (bin "day_8") generated 1 warning
+warning: multiple variants are never constructed
+  --> src\bin\day_9.rs:16:5
+   |
+15 | enum PosH {
+   |      ---- variants in this enum
+16 |     Up,
+   |     ^^
+17 |     UR,
+   |     ^^
+18 |     Ri,
+   |     ^^
+19 |     DR,
+   |     ^^
+20 |     Do,
+   |     ^^
+21 |     DL,
+   |     ^^
+22 |     Le,
+   |     ^^
+23 |     UL,
+   |     ^^
+24 |     Md,
+   |     ^^
+   |
+   = note: `PosH` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: function `parse_line` is never used
+  --> src\bin\day_9.rs:58:4
+   |
+58 | fn parse_line(s: String) -> (MovH, u32) {
+   |    ^^^^^^^^^^
+
+warning: unused import: `std::fmt::Display`
+ --> src\bin\refcel.rs:1:5
+  |
+1 | use std::fmt::Display;
+  |     ^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `advent_of_code` (bin "day_9") generated 2 warnings
+warning: `advent_of_code` (bin "refcel") generated 1 warning (run `cargo fix --bin "refcel"` to apply 1 suggestion)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.15s
