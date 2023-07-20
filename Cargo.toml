@@ -17,6 +17,7 @@ edition = "2021"
 
 [dependencies]
 futures = { version = "0.3.28", features = ["executor", "thread-pool"] }
+num = { version = "0.4.1", features = ["num-bigint"] }
 tokio = { version = "1.29.1", features = ["rt"] }
 
 [dev-dependencies]

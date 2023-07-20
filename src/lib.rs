@@ -1,6 +1,7 @@
 pub mod day_8_algorithms;
 pub mod day_9_structs;
 pub mod day_10;
+pub mod day_11;
 
 pub use std::{fs::File, io::{BufRead, BufReader, Lines}, path::PathBuf};
 pub fn lines<T: ToString>(path: T) -> Lines<BufReader<File>> {
