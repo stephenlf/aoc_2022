@@ -31,10 +31,21 @@ fn main() {
             }
         }
         if i % 1000 == 0 || i == 1 || i == 20 {
+            print!("{i}: ");
             for monkey in monkeys.iter() {
-                monkey.borrow().list_items();
+                print!("{} ", monkey.borrow().examined);
+                //monkey.borrow().list_items();
             }
+            print!("\n");
         }
     }
+    let mut touches = monkeys.iter()
+        .map(|monkey|monkey.borrow().examined)
+        .collect::<Vec<u64>>();
+    touches.sort();
+    println!("{touches:?}");
+    let max = touches.pop().unwrap();
+    let next_max = touches.pop().unwrap();
+    println!("{} * {} = {}", max, next_max, max * next_max);
 
 }
